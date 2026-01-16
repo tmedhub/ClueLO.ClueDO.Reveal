@@ -45,9 +45,9 @@ h1{
 
 /* ===== FLIP CARD ===== */
 .flip-card{
-  width:clamp(160px,26vw,220px);
-  height:clamp(220px,38vw,300px);
-  perspective:1200px;
+  width:clamp(170px,28vw,240px);
+  height:clamp(240px,42vw,330px);
+  perspective:1400px;
   cursor:pointer;
 }
 
@@ -55,7 +55,7 @@ h1{
   width:100%;
   height:100%;
   position:relative;
-  transition:transform .85s ease;
+  transition:transform .9s ease;
   transform-style:preserve-3d;
 }
 
@@ -68,27 +68,54 @@ h1{
   inset:0;
   backface-visibility:hidden;
   border:2px solid #7a2a2a;
-  box-shadow:0 0 26px rgba(255,0,0,.45);
+  box-shadow:0 0 30px rgba(255,0,0,.5);
   display:flex;
   justify-content:center;
   align-items:center;
+  padding:16px;
+}
+
+/* ===== FRONT (ENHANCED DESIGN) ===== */
+.front{
+  background:linear-gradient(180deg,#3a0000,#180000);
+  color:#ffd6d6;
+}
+
+/* Inner plaque */
+.front .inner{
+  width:100%;
+  height:100%;
+  border:2px solid #ff7777;
+  background:rgba(0,0,0,.35);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
   padding:18px;
 }
 
-/* ===== FRONT (TEXT CARD) ===== */
-.front{
-  background:#2b0000;
-  color:#ffb3b3;
-  text-align:center;
+/* Title */
+.front .brand{
+  font-size:clamp(1.3rem,3.6vw,1.9rem);
+  font-weight:700;
+  letter-spacing:2px;
+  margin-bottom:14px;
+  text-shadow:0 0 14px rgba(255,0,0,.6);
 }
 
-.front .title{
-  font-size:1.05rem;
-  margin-bottom:10px;
+/* Divider */
+.front .divider{
+  width:70%;
+  height:2px;
+  background:#ff7777;
+  margin:10px 0 14px;
+  box-shadow:0 0 10px rgba(255,0,0,.6);
 }
 
+/* Type */
 .front .type{
-  font-size:1.4rem;
+  font-size:clamp(1.2rem,3.2vw,1.6rem);
   letter-spacing:1px;
 }
 
@@ -110,7 +137,7 @@ h1{
 <body>
 
 <div class="container">
-  <h1>And the answer is……</h1>
+  <h1>The cards in the envelope were...(drumroll).../h1>
 
   <div class="cards">
 
@@ -118,8 +145,9 @@ h1{
     <div class="flip-card" onclick="this.classList.toggle('flipped')">
       <div class="flip-inner">
         <div class="card-face front">
-          <div>
-            <div class="title">ClueLO · ClueDO</div>
+          <div class="inner">
+            <div class="brand">ClueLO · ClueDO</div>
+            <div class="divider"></div>
             <div class="type">Suspect</div>
           </div>
         </div>
@@ -133,8 +161,9 @@ h1{
     <div class="flip-card" onclick="this.classList.toggle('flipped')">
       <div class="flip-inner">
         <div class="card-face front">
-          <div>
-            <div class="title">ClueLO · ClueDO</div>
+          <div class="inner">
+            <div class="brand">ClueLO · ClueDO</div>
+            <div class="divider"></div>
             <div class="type">Weapon</div>
           </div>
         </div>
@@ -148,8 +177,9 @@ h1{
     <div class="flip-card" onclick="this.classList.toggle('flipped')">
       <div class="flip-inner">
         <div class="card-face front">
-          <div>
-            <div class="title">ClueLO · ClueDO</div>
+          <div class="inner">
+            <div class="brand">ClueLO · ClueDO</div>
+            <div class="divider"></div>
             <div class="type">Location</div>
           </div>
         </div>
